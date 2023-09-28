@@ -1,0 +1,38 @@
+{
+  "cart": [
+    {
+      "item": "shirt",
+      "category": "clothing",
+      "price": 300
+    },
+    {
+      "item": "shorts",
+      "category": "clothing",
+      "price": 700
+    },
+    {
+      "item": "hat",
+      "category": "accessories",
+      "price": 100
+    }
+  ],
+  "campaigns": [
+    {
+      "category": "onTop",
+      "type": "byItem",
+      "item": "clothing",
+      "amount": 15
+    },
+    {
+      "category": "coupon",
+      "type": "fixed",
+      "amount": 50
+    },
+    {
+      "category": "seasonal",
+      "type": "special",
+      "forEvery": 100,
+      "discount": 15
+    }
+  ]
+}
