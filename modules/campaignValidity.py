@@ -20,6 +20,8 @@ class campaignValidity:
                 if ((campaign == "fixed" and "amount" in discount and discount["amount"] > 0) or
                         (campaign == "percent" and "amount" in discount and 0 < discount["amount"] < 100)):
                     self.coupon = self.coupon + 1
+                else:
+                    discount["category"] = "Invalid"
 
             elif cat == "onTop":
                 if (campaign == "byItem" and "item" in discount and discount["item"] in ["clothing", "accessories",
@@ -32,13 +34,19 @@ class campaignValidity:
                             match = True
                     if match:
                         self.onTop = self.onTop + 1
+                    else:
+                        discount["category"] = "Invalid"
 
                 elif campaign == "byPoints" and "amount" in discount and discount["amount"] > 0:
                     self.onTop = self.onTop + 1
+                else:
+                    discount["category"] = "Invalid"
 
             elif cat == "seasonal" and campaign == "special":
                 if "forEvery" in discount and "discount" in discount and discount["discount"] < discount["forEvery"]:
                     self.seasonal = self.seasonal + 1
+                else:
+                    discount["category"] = "Invalid"
 
         if self.coupon == 0 and self.onTop == 0 and self.seasonal == 0:
             response = response + "no valid discount campaigns selected"

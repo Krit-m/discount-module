@@ -11,6 +11,8 @@ class couponDiscount:
 
         if self.coupon["type"] == "fixed":
             self.percent = self.coupon["amount"] / total
+            if self.percent > 1:
+                self.percent = 1
         else:  # percent discount
             self.percent = self.coupon["amount"] / 100
 

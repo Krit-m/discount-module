@@ -1,6 +1,7 @@
 import json
 from modules.campaignValidity import campaignValidity
 from modules.couponDiscount import couponDiscount
+from modules.onTopDiscount import onTopDiscount
 
 f = open('shoppingList.json')
 data = json.load(f)
@@ -20,16 +21,27 @@ if discount_check.validity:
 
     while discount_check.coupon + discount_check.onTop + discount_check.seasonal > 0:
         for discount in discountList:
+            # coupon
             if discount["category"] == "coupon":
                 coupon = couponDiscount(itemList, discount)
                 itemList = coupon.apply()
                 discount["category"] = "used"
                 print(discount["type"] + " is used.")
                 discount_check.use_coupon()
+
+            # on top
             if discount["category"] == "onTop" and discount_check.coupon == 0:
+                onTop = onTopDiscount(itemList,discount)
+                itemList = onTop.apply()
                 discount["category"] = "used"
-                print(discount["type"] + " is used.")
+                if discount["type"] == "byPoints":
+                    point = ", with " + str(int(onTop.point)) + " points,"
+                else:
+                    point = ""
+                print(discount["type"] + point + " is used.")
                 discount_check.use_on_top()
+
+            # seasonal
             if discount["category"] == "seasonal" and discount_check.coupon == 0 and discount_check.onTop == 0:
                 discount["category"] = "used"
                 print(discount["type"] + " is used.")
@@ -39,4 +51,4 @@ if discount_check.validity:
     for item in itemList:
         total = total + item["price"]
 
-    print("Discounted price: " + str(total) + " Baht")
+    print("Discounted price: " + str(round(total,2)) + " Baht")

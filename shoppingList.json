@@ -19,7 +19,12 @@
   "campaigns": [
     {
       "category": "onTop",
-      "type": "byItem",
+      "type": "byPoints",
+      "amount": 15
+    },
+    {
+      "category": "onTop",
+      "type": "byIte",
       "item": "clothing",
       "amount": 15
     },
