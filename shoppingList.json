@@ -18,22 +18,26 @@
   ],
   "campaigns": [
     {
+      "name": "Back2School",
       "category": "onTop",
       "type": "byPoints",
       "amount": 15
     },
     {
+      "name": "HappyNewYar",
       "category": "onTop",
-      "type": "byIte",
+      "type": "byItem",
       "item": "clothing",
       "amount": 15
     },
     {
+      "name": "HappyHalloween",
       "category": "coupon",
       "type": "percent",
       "amount": 10
     },
     {
+      "name": "MerryChristmas",
       "category": "seasonal",
       "type": "special",
       "forEvery": 100,
