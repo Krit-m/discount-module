@@ -32,7 +32,7 @@ if discount_check.validity:
 
             # on top
             if discount["category"] == "onTop" and discount_check.coupon == 0:
-                onTop = onTopDiscount(itemList,discount)
+                onTop = onTopDiscount(itemList, discount)
                 itemList = onTop.apply()
                 discount["category"] = "used"
                 if discount["type"] == "byPoints":
@@ -46,7 +46,7 @@ if discount_check.validity:
 
             # seasonal
             if discount["category"] == "seasonal" and discount_check.coupon == 0 and discount_check.onTop == 0:
-                seasonal = seasonalDiscount(itemList,discount)
+                seasonal = seasonalDiscount(itemList, discount)
                 itemList = seasonal.apply()
                 discount["category"] = "used"
                 print(discount["name"] + " (" + discount["type"] + ") is used.")
@@ -56,4 +56,4 @@ if discount_check.validity:
     for item in itemList:
         total = total + item["price"]
 
-    print("\nTotal price: " + str(round(total,2)) + " Baht")
+    print("\nTotal price: " + str(round(total, 2)) + " Baht")
