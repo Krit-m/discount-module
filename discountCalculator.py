@@ -37,9 +37,11 @@ if discount_check.validity:
                 discount["category"] = "used"
                 if discount["type"] == "byPoints":
                     point = ", with " + str(int(onTop.point)) + " points,"
+                    promo_item = ""
                 else:
                     point = ""
-                print(discount["name"] + " (" + discount["type"] + ")" + point + " is used.")
+                    promo_item = ", " + discount["item"]
+                print(discount["name"] + " (" + discount["type"] + promo_item + ")" + point + " is used.")
                 discount_check.use_on_top()
 
             # seasonal

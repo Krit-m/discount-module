@@ -18,13 +18,13 @@
   ],
   "campaigns": [
     {
-      "name": "Back2School",
+      "name": "HappyNewYar",
       "category": "onTop",
       "type": "byPoints",
       "amount": 15
     },
     {
-      "name": "HappyNewYar",
+      "name": "Back2School",
       "category": "onTop",
       "type": "byItem",
       "item": "clothing",
