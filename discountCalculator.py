@@ -19,15 +19,20 @@ print(response)
 if discount_check.validity:
     itemList = data["cart"]
     discountList = data["campaigns"]
+    zero = False
 
-    while discount_check.coupon + discount_check.onTop + discount_check.seasonal > 0:
+    while discount_check.coupon + discount_check.onTop + discount_check.seasonal > 0 and not zero:
         for discount in discountList:
             # coupon
+            free = ""
             if discount["category"] == "coupon":
                 coupon = couponDiscount(itemList, discount)
                 itemList = coupon.apply()
                 discount["category"] = "used"
-                print(discount["name"] + " (" + discount["type"] + ") is used.")
+                if coupon.percent == 1:
+                    zero = True
+                    free = " The total price is covered."
+                print(discount["name"] + " (" + discount["type"] + ") is used."+free)
                 discount_check.use_coupon()
 
             # on top

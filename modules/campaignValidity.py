@@ -30,8 +30,10 @@ class campaignValidity:
                 campaign = discount["type"]
 
                 if cat == "coupon":
-                    if ((campaign == "fixed" and "amount" in discount and discount["amount"] > 0) or
-                            (campaign == "percent" and "amount" in discount and 0 < discount["amount"] < 100)):
+                    if ((campaign == "fixed" and "amount" in discount and type(discount["amount"]) is int and discount[
+                        "amount"] > 0) or
+                            (campaign == "percent" and "amount" in discount and type(discount["amount"]) is int and 0 <
+                             discount["amount"] < 100)):
                         self.coupon = self.coupon + 1
                     else:
                         discount["category"] = "Invalid"
@@ -39,7 +41,8 @@ class campaignValidity:
                 elif cat == "onTop":
                     if (campaign == "byItem" and "item" in discount and discount["item"] in ["clothing", "accessories",
                                                                                              "electronics"]
-                            and "amount" in discount and 0 < discount["amount"] < 100):
+                            and "amount" in discount and type(discount["amount"]) is int and 0 < discount[
+                                "amount"] < 100):
 
                         match = False
                         for item in self.list["cart"]:
@@ -50,13 +53,15 @@ class campaignValidity:
                         else:
                             discount["category"] = "Invalid"
 
-                    elif campaign == "byPoints" and "amount" in discount and discount["amount"] > 0:
+                    elif campaign == "byPoints" and "amount" in discount and type(discount["amount"]) is int and \
+                            discount["amount"] > 0:
                         self.onTop = self.onTop + 1
                     else:
                         discount["category"] = "Invalid"
 
                 elif cat == "seasonal" and campaign == "special":
-                    if "forEvery" in discount and "discount" in discount and discount["discount"] < discount["forEvery"]:
+                    if "forEvery" in discount and type(discount["forEvery"]) is int and "discount" in discount and type(
+                            discount["discount"]) is int and discount["discount"] < discount["forEvery"]:
                         self.seasonal = self.seasonal + 1
                     else:
                         discount["category"] = "Invalid"
