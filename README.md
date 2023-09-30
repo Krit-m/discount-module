@@ -44,10 +44,11 @@
 ## Other assumptions made
 
 - For every discount campaigns in which the discount would be applied to the 'total price', the discount is applied in a
-  certain percentage to EVERY ITEM in the cart, so that the total price is deducted to the desired amount. <br><br>This
-  decision is to avoid conflicts in cases that a fixed amount discount, which is a coupon, is applied before '
-  percentage discount by item category', an on top discount that might not be applied on all the items. This way, all
-  items' price are reduced by 'fixed amount' equally before going through 'percentage discount by item category'.
+  certain percentage to EVERY ITEM in the cart, so that the total price is deducted to the desired amount. <br><br>The
+  reason of this decision is to avoid conflicts in cases that a fixed amount discount, which is a coupon, is applied
+  before 'percentage discount by item category', an on top discount that might not be applied on all the items. This
+  way, all items' price are reduced by 'fixed amount' equally before going through 'percentage discount by item
+  category'.
   <br/><br/>
 - If the 'fixed amount' coupon have higher amount than the total price, the total will be cut down to 0 baht, not a
   price of negative number. Also, other campaigns in the list are not used. However, if the shopping list include other
