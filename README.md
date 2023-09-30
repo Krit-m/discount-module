@@ -21,7 +21,7 @@ application of **Krittaphat Maiklad**.
   parameters are as following:<br/><br/>- Amount, percentage, or Customer points: "amount" <br/>(for any campaigns with
   only one numerical parameter)<br/><br/>-Item category: "item"<br/>(for percentage discount by item
   category)<br/> <br/>- Every X THB: "forEvery"<br/>- Discount Y THB: "discount"<br/>(for special
-  campaigns) <br/><br/> **In addition**, I've added the 'currentPromotion.json' file as another input. This adaptation
+  campaigns) <br/><br/> **In addition**, I've added the 'currentPromotion.json' file as another input. This implementation
   aims to reflect the real life condition, in which some promotions might be usable only during a specific period of
   time. (Therefore, this input should only be edited by the store.) The file contains names (or code)
   referring to the promotional campaigns. Campaigns in 'shoppingList.json' with different names than the ones in this
