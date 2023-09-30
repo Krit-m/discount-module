@@ -1,24 +1,27 @@
 ## Requirement
 
 - 'json' python library
+
 ## Instruction
 
 - Use 'discountCalculator.py' as the main program. Functions for campaign check and discount calculations are created in
   the 'modules' folder.<br/><br/>
 - The module receive input from the file 'shoppingList.json', which includes items in the shopping cart and discount
-  campaigns chosen to be used. Items' categories are supposed to be specified in this list.<br/><br/> The term used in
-  json input for each discount category and type are as following:<br/><br/>- Coupon : "coupon"<br/>- On Top : "onTop"
+  campaigns chosen to be used. Items' categories are supposed to be specified in this list.<br/><br/> The terms used in
+  json input and the module for discount categories and types are as following:<br/><br/>- Coupon : "coupon"<br/>- On
+  Top : "onTop"
   <br/>- Seasonal: "seasonal"
   <br/><br/>- Fixed amount : "fixed"<br/>- Percentage discount : "percent"<br/>- Percentage discount by item
   category : "byItem"<br/>- Discount by points : "byPoints" <br/>- Special campaigns: "special" <br/><br/>The terms for
   parameters are as following:<br/><br/>- Amount, percentage, or Customer points: "amount" <br/>(for any campaigns with
-  only one numerical parameter)<br/><br/>-Item category: "item"<br/>(for percentage discount by item category)<br/><br/>
-    - Every X THB: "forEvery"<br/>- Discount Y THB: "discount"<br/>(for special campaigns) <br/><br/> **In addition**,
-      I've added the 'currentPromotion.json' file as another input. This adaptation aims to reflect the real life
-      condition, in which some promotions might be usable only during a specific period of time (
-      Therefore, this input should only be edited by the store.). The file contains names (or code)
-      referring to the promotional campaigns. Campaigns in '
-      shoppingList.json' with different names than the ones in this file are considered unusable.<br/><br/>
+  only one numerical parameter)<br/><br/>-Item category: "item"<br/>(for percentage discount by item
+  category)<br/> <br/>- Every X THB: "forEvery"<br/>- Discount Y THB: "discount"<br/>(for special
+  campaigns) <br/><br/> **In addition**, I've added the 'currentPromotion.json' file as another input. This adaptation
+  aims to reflect the real life condition, in which some promotions might be usable only during a specific period of
+  time (
+  Therefore, this input should only be edited by the store.). The file contains names (or code)
+  referring to the promotional campaigns. Campaigns in '
+  shoppingList.json' with different names than the ones in this file are considered unusable.<br/><br/>
 - Upon starting the program, the validity of each discount campaign is checked. A campaign in the list with any of the
   following properties is counted as 'Invalid':
     - Does not have a name, or its name is not included in 'currentPromotion'. For example, campaign 'HappyNewYear' is
