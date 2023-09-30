@@ -18,10 +18,9 @@
   category)<br/> <br/>- Every X THB: "forEvery"<br/>- Discount Y THB: "discount"<br/>(for special
   campaigns) <br/><br/> **In addition**, I've added the 'currentPromotion.json' file as another input. This adaptation
   aims to reflect the real life condition, in which some promotions might be usable only during a specific period of
-  time (
-  Therefore, this input should only be edited by the store.). The file contains names (or code)
-  referring to the promotional campaigns. Campaigns in '
-  shoppingList.json' with different names than the ones in this file are considered unusable.<br/><br/>
+  time. (Therefore, this input should only be edited by the store.) The file contains names (or code)
+  referring to the promotional campaigns. Campaigns in 'shoppingList.json' with different names than the ones in this
+  file are considered unusable.<br/><br/>
 - Upon starting the program, the validity of each discount campaign is checked. A campaign in the list with any of the
   following properties is counted as 'Invalid':
     - Does not have a name, or its name is not included in 'currentPromotion'. For example, campaign 'HappyNewYear' is
@@ -29,7 +28,7 @@
     - Discount category (coupon, on top, or seasonal) and type (i.e. fixed amount or percentage discount) are unmatched.
       For example; "category" : "coupon", "type" : "byItem"
     - Missing a required parameter or parameter value does not match. For example, string value for "amount".
-    - Amount equals to or lower than zero; or higher than 100 for percentage discounts.
+    - "amount" is not a positive integer, or higher than 100 for percentage discounts.
     - "byItem" campaign, in cases that its specified item category does not match any items in the cart.
     - "special" campaign, with "discount" value higher than "forEvery"<br/><br/>
 - The program does not stop working when encounter an invalid campaign. It will continue the discount calculation with
@@ -42,7 +41,7 @@
     - For 'byItem', the item category is included in the output.
     - For 'byPoints', the amount of point used is stated in the output
 
-## Assumptions made
+## Other assumptions made
 
 - For every discount campaigns in which the discount would be applied to the 'total price', the discount is applied in a
   certain percentage to EVERY ITEM in the cart, so that the total price is deducted to the desired amount. <br><br>This
