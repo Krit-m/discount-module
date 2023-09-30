@@ -1,3 +1,8 @@
+## Introduction
+
+The codes and documentation in this repository are part of the **coding test - take home assignment** for Playtorium job
+application of **Krittaphat Maiklad**.
+
 ## Requirement
 
 - 'json' python library
