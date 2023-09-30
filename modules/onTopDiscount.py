@@ -18,7 +18,7 @@ class onTopDiscount:
                     item["price"] = item["price"] * price_factor
 
         else:  # by points
-            limit = total // 5
+            limit = round(total / 5)
             self.point = self.onTop["amount"]
             if self.point > limit:
                 self.point = limit

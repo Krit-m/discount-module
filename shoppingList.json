@@ -21,20 +21,26 @@
       "name": "Back2School",
       "category": "onTop",
       "type": "byPoints",
-      "amount": 15
+      "amount": 300
     },
     {
-      "name": "Back2Schoo",
+      "name": "HappyNewYear",
       "category": "onTop",
       "type": "byItem",
       "item": "clothing",
       "amount": 15
     },
     {
-      "name": "HappyHalloween",
+      "name": "HappyHallowee",
       "category": "coupon",
       "type": "percent",
       "amount": 20
+    },
+    {
+      "name": "HappyHalloween",
+      "category": "coupon",
+      "type": "fixed",
+      "amount": 200
     },
     {
       "name": "MerryChristmas",
