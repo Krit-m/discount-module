@@ -6,12 +6,12 @@ from modules.seasonalDiscount import seasonalDiscount
 
 f = open('shoppingList.json')
 data = json.load(f)
-total = 0
-
-for item in data["cart"]:
-    total = total + item["price"]
-
-print(total)
+# total = 0
+#
+# for item in data["cart"]:
+#     total = total + item["price"]
+#
+# print(total)
 discount_check = campaignValidity(data)
 response = discount_check.valid()
 print(response)
