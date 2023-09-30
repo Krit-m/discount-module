@@ -46,7 +46,7 @@
 - For every discount campaigns in which the discount would be applied to the 'total price', the discount is applied in a
   certain percentage to EVERY ITEM in the cart, so that the total price is deducted to the desired amount. <br><br>The
   reason of this decision is to avoid conflicts in cases that a fixed amount discount, which is a coupon, is applied
-  before 'percentage discount by item category', an on top discount that might not be applied on all the items. This
+  before 'percentage discount by item category', an on top discount that might not be applied to all the items. This
   way, all items' price are reduced by 'fixed amount' equally before going through 'percentage discount by item
   category'.
   <br/><br/>
